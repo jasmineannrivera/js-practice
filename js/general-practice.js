@@ -9,9 +9,9 @@
  */
 
 const twoSum = (nums, target) => {
-    const ht = {};
-    for (let i = 0; i < nums.length; i++) {
-        if (target - nums[i] in ht) {
+    const ht = {}; //create an empty object
+    for (let i = 0; i < nums.length; i++) { //loop through array of numbers
+        if (target - nums[i] in ht) { //see if the target minus the current num is in the obj
             return [ht[target - nums[i]], i];
         } else {
             ht[nums[i]] = i;
