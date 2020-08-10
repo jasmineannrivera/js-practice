@@ -36,3 +36,19 @@ console.log(isVowel("a"));
 function hasVowels(str) {
     return str.match(/[aeiouAEIOU]/);
 }
+
+// Write a function definition named countVowels that takes in value and returns the count of the number of vowels in a sequence.
+function countVowels(str1) {
+    var vowel_list = 'aeiouAEIOU';
+    var vcount = 0;
+
+    for(var x = 0; x < str1.length ; x++)
+    {
+        if (vowel_list.indexOf(str1[x]) !== -1)
+        {
+            vcount += 1;
+        }
+
+    }
+    return vcount;
+}
