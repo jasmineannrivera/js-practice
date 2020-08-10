@@ -22,3 +22,12 @@ const twoSum = (nums, target) => {
 console.log(twoSum([1, 2, 3, 4], 5));
 
 
+// Write a function definition named isVowel that takes in value and returns true if the value is a, e, i, o, u in upper or lower case.
+function isVowel(char) {
+    if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u" || char === "U") {
+        return true;
+    }
+    return false;
+}
+
+console.log(isVowel("a"));
