@@ -52,3 +52,8 @@ function countVowels(str1) {
     }
     return vcount;
 }
+
+// Write a function definition named removeVowels that takes in string and returns the string without any vowels
+function removeVowels(str) {
+    return str.replace(/[aeiou]/gi, '');
+}
