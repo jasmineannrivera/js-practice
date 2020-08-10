@@ -31,3 +31,8 @@ function isVowel(char) {
 }
 
 console.log(isVowel("a"));
+
+// Write a function definition named hasVowels that takes in value and returns true if the string contains any vowels.
+function hasVowels(str) {
+    return str.match(/[aeiouAEIOU]/);
+}
