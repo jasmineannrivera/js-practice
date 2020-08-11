@@ -68,3 +68,13 @@ function startsWithVowel(str) {
     }
     return false;
 }
+
+// Write a function definition named endsWithVowel that takes in string and true if the string ends with a vowel
+function endsWithVowel(str) {
+    var vowelRegex = '[aieouAIEOU]$.*'
+    var matched = str.match(vowelRegex)
+    if(matched) {
+        return true;
+    }
+    return false;
+}
