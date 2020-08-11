@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+	"use strict";
+
+	var studentArr = [
+	    [58, "algebra"],
+		[58, "athletics"],
+		[63, "art"],
+		[88, "algebra"],
+		[72, "english"],
+		[77, "calculus"],
+		[69, "art"]
+	];
+
+	function students(array) {
+		var obj = {};
+	    for (var i = 0; i < array.length; i++) {
+	        for (var j = i + 1; j < array.length; j ++) {
+                var arr = [];
+	            if (array[i][0] !== array[j][0]) {
+                    arr.push(array[i][0], array[j][0]);
+                    console.log(arr);
+                    obj.student = arr;
+
+                }
+	        }
+	    }
+        console.log(obj);
+    }
+
+	students(studentArr);
+
+
+</script>
+</html>
