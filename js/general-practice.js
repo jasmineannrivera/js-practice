@@ -57,3 +57,14 @@ function countVowels(str1) {
 function removeVowels(str) {
     return str.replace(/[aeiou]/gi, '');
 }
+
+
+// Write a function definition named startsWithVowel that takes in string and true if the string starts with a vowel
+function startsWithVowel(str) {
+    var vowelRegex = '^[aieouAIEOU].*';
+    var matched = str.match(vowelRegex);
+    if(matched) {
+        return true;
+    }
+    return false;
+}
