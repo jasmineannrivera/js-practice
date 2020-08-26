@@ -88,3 +88,22 @@ function startsAndEndsWithVowel(str) {
     }
     return false;
 }
+
+function countLetters(str) {
+    //initiate empty obj
+    let countObj = {};
+    //fancy es6 syntax for loop
+    for (let element of str) {
+        //if the obj does not contain that specific letter, it is just 1
+        if (!countObj[element]) {
+            countObj[element] = 1
+            //else keep adding to the count of that letter
+        } else {
+            countObj[element]++
+        }
+    }
+    return countObj
+
+}
+
+console.log(countLetters("jasmineannrivera"));
