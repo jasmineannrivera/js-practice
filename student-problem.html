@@ -10,7 +10,7 @@
 <script>
 	"use strict";
 
-	var studentArr = [
+	let studentArr = [
 	    [58, "algebra"],
 		[58, "athletics"],
 		[63, "art"],
@@ -21,17 +21,14 @@
 	];
 
 	function students(array) {
-		var obj = {};
-	    for (var i = 0; i < array.length; i++) {
-	        for (var j = i + 1; j < array.length; j ++) {
-                var arr = [];
-	            if (array[i][0] !== array[j][0]) {
-                    arr.push(array[i][0], array[j][0]);
-                    console.log(arr);
-                    obj.student = arr;
-
-                }
+		let obj = {};
+	    for (let studentClass of array) {
+	        let subject = studentClass[1];
+	        let student = studentClass[0];
+	        if (!obj[subject]) {
+	            obj[subject] = [];
 	        }
+	        obj[subject].push(student);
 	    }
         console.log(obj);
     }
