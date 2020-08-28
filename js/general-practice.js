@@ -107,3 +107,65 @@ function countLetters(str) {
 }
 
 console.log(countLetters("jasmineannrivera"));
+
+
+
+//calculate if n subsets that add up to the same sum from given arr is possible, return boolean
+// ex: [1, 2, 3, 3, 4, 5, 6] n = 4 would return true
+
+
+console.log(sortArray([1, 2, 3, 3, 4, 5, 6]));
+function calculateSubsets(arr, n) {
+    let target = findTarget(arr, n);
+    let sortedArray = sortArray(arr);
+    let subSets = createSubsets(n);
+    for (let i = 0; i < sortedArray.length; i++) {
+        for (let j = 0; j < subSets.length; j++) {
+            //
+            if (sortedArray[i] <= target && addArray(subSets[j]) <= target ) {
+                pushToArray(sortedArray[i], subSets[j]);
+                // subSets[j].push(sortedArray[i]);
+                console.log(addArray(subSets[j]));
+                break;
+            }
+        }
+    }
+    return subSets;
+
+}
+
+console.log(calculateSubsets([1, 2, 3, 3, 4, 5, 6], 4));
+
+//helper function to sort array
+function sortArray(arr) {
+    return arr.sort().reverse();
+}
+
+//helper function to add all numbers in array
+function addArray(arr) {
+    return arr.reduce((a, b) => a + b, 0);
+}
+
+
+//helper function to create n subsets
+function createSubsets(n) {
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+
+        arr.push([]);
+    }
+    return arr;
+
+}
+
+//helper function to find target
+function findTarget(arr, n) {
+    return addArray(arr)/n;
+}
+function pushToArray(element,arr) {
+    arr.push(element);
+    return arr;
+
+}
+
+console.log(pushToArray("elephant", ["Mir", "is", "an"]));
