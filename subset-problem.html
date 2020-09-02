@@ -14,19 +14,24 @@
             let target = findTarget(arr, n);
             let subSets = createSubsets(n);
             let newArr = sortArray(arr);
+            let matchCount = 0;
             for (let i = 0; i < newArr.length; i++) {
                 for (let j = 0; j < subSets.length; j++) {
                     if (newArr[i] + addArray(subSets[j]) <= target) {
                         subSets[j].push(newArr[i]);
+                        if (addArray(subSets[j]) === target) {
+                            matchCount++;
+                        }
                         break;
+
                     }
                 }
             }
-            return subSets;
-
-
+            return matchCount === n;
         }
         console.log(calculateSubsets([1, 5, 2, 3, 3, 4, 1, 1], 4));
+        console.log(calculateSubsets([1, 2, 3, 3, 4, 5, 6], 4));
+
 
         //helper function to sort array
         function sortArray(arr) {
