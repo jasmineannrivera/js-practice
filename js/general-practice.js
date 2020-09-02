@@ -122,7 +122,7 @@ function calculateSubsets(arr, n) {
     for (let i = 0; i < sortedArray.length; i++) {
         for (let j = 0; j < subSets.length; j++) {
             //
-            if (sortedArray[i] <= target && addArray(subSets[j]) <= target ) {
+            if (sortedArray[i] <= target && addArray(subSets[j]) !== target ) {
                 pushToArray(sortedArray[i], subSets[j]);
                 // subSets[j].push(sortedArray[i]);
                 console.log(addArray(subSets[j]));
@@ -158,14 +158,14 @@ function createSubsets(n) {
 
 }
 
-//helper function to find target
-function findTarget(arr, n) {
-    return addArray(arr)/n;
-}
-function pushToArray(element,arr) {
-    arr.push(element);
-    return arr;
+    //helper function to find target
+    function findTarget(arr, n) {
+        return addArray(arr)/n;
+    }
+    function pushToArray(element,arr) {
+        arr.push(element);
+        return arr;
 
-}
+    }
 
 console.log(pushToArray("elephant", ["Mir", "is", "an"]));

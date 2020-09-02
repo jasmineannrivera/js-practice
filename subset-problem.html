@@ -9,10 +9,24 @@
 	<script>
 		"use strict";
         //calculate if n subsets that add up to the same sum from given arr is possible, return boolean
-        // ex: [1, 2, 3, 3, 4, 5, 6] n = 4 would return true
+        // ex: [1, 5, 2, 3, 3, 4, 1, 1] n = 4 would return true
         function calculateSubsets(arr, n) {
+            let target = findTarget(arr, n);
+            let subSets = createSubsets(n);
+            let newArr = sortArray(arr);
+            for (let i = 0; i < newArr.length; i++) {
+                for (let j = 0; j < subSets.length; j++) {
+                    if (newArr[i] + addArray(subSets[j]) <= target) {
+                        subSets[j].push(newArr[i]);
+                        break;
+                    }
+                }
+            }
+            return subSets;
+
 
         }
+        console.log(calculateSubsets([1, 5, 2, 3, 3, 4, 1, 1], 4));
 
         //helper function to sort array
         function sortArray(arr) {
@@ -23,6 +37,30 @@
         function addArray(arr) {
             return arr.reduce((a, b) => a + b, 0);
         }
+
+        //helper function to create n subsets
+        function createSubsets(n) {
+            let arr = [];
+            for (let i = 0; i < n; i++) {
+
+                arr.push([]);
+            }
+            return arr;
+
+        }
+
+        //helper function to find target
+        function findTarget(arr, n) {
+            return addArray(arr)/n;
+        }
+
+        //helper function to push to array
+        function pushToArray(element,arr) {
+            arr.push(element);
+            return arr;
+
+        }
+
 	</script>
 </body>
 </html>
