@@ -169,3 +169,16 @@ function createSubsets(n) {
     }
 
 console.log(pushToArray("elephant", ["Mir", "is", "an"]));
+
+//Given two sorted lists of integers, merge them into one large sorted list.
+//
+// For example, given these two lists:
+//
+// lst0 = [5, 10, 15]
+// lst1 = [3, 8, 9]
+// Return [3, 5, 8, 9, 10, 15].
+
+
+//Given a string s, eliminate consecutive duplicate characters from the string and return it.
+//
+// That is, if a list contains repeated characters, they should be replaced with a single copy of the character. The order of the elements should not be changed.
