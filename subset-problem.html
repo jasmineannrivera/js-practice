@@ -23,15 +23,11 @@
                             matchCount++;
                         }
                         break;
-
                     }
                 }
             }
             return matchCount === n;
         }
-        console.log(calculateSubsets([1, 5, 2, 3, 3, 4, 1, 1], 4));
-        console.log(calculateSubsets([1, 2, 3, 3, 4, 5, 6], 4));
-
 
         //helper function to sort array
         function sortArray(arr) {
@@ -65,6 +61,9 @@
             return arr;
 
         }
+        console.log(calculateSubsets([1, 5, 2, 3, 3, 4, 1, 1], 4)); //true
+        console.log(calculateSubsets([1, 2, 3, 3, 4, 5, 6], 4)); //true
+        console.log(calculateSubsets([1, 2, 3, 3, 4, 5, 7], 4)); //false
 
 	</script>
 </body>
