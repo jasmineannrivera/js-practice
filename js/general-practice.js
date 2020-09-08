@@ -180,5 +180,8 @@ console.log(pushToArray("elephant", ["Mir", "is", "an"]));
 
 
 //Given a string s, eliminate consecutive duplicate characters from the string and return it.
-//
 // That is, if a list contains repeated characters, they should be replaced with a single copy of the character. The order of the elements should not be changed.
+
+function eliminateDupes() {
+
+}
