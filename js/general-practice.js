@@ -134,7 +134,7 @@ function calculateSubsets(arr, n) {
 
 }
 
-console.log(calculateSubsets([1, 2, 3, 3, 4, 5, 6], 4));
+// console.log(calculateSubsets([1, 2, 3, 3, 4, 5, 6], 4));
 
 //helper function to sort array
 function sortArray(arr) {
@@ -168,7 +168,7 @@ function createSubsets(n) {
 
     }
 
-console.log(pushToArray("elephant", ["Mir", "is", "an"]));
+
 
 //Given two sorted lists of integers, merge them into one large sorted list.
 //
@@ -182,6 +182,19 @@ console.log(pushToArray("elephant", ["Mir", "is", "an"]));
 //Given a string s, eliminate consecutive duplicate characters from the string and return it.
 // That is, if a list contains repeated characters, they should be replaced with a single copy of the character. The order of the elements should not be changed.
 
-function eliminateDupes() {
+function eliminateDupes(s) {
+    let sArr = s.split(" ");
+    let newString = "";
+    for (let i = 0; i < sArr.length; i++) {
+        for (let j = i + 1; j < sArr.length; j ++) {
+            if (sArr[i] !== sArr[j]) {
+                newString += (sArr[i]);
+            }
+        }
+    }
+    console.log(sArr);
+    return newString;
 
 }
+
+console.log(eliminateDupes("Mira Fawn"));
