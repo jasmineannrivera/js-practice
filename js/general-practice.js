@@ -170,13 +170,6 @@ function createSubsets(n) {
 
 
 
-//Given two sorted lists of integers, merge them into one large sorted list.
-//
-// For example, given these two lists:
-//
-// lst0 = [5, 10, 15]
-// lst1 = [3, 8, 9]
-// Return [3, 5, 8, 9, 10, 15].
 
 
 //Given a string s, eliminate consecutive duplicate characters from the string and return it.
@@ -224,3 +217,40 @@ function getIthItemInLinkedList(head, i) {
 
     throw new Error("List has fewer than i + 1 (" + (i + 1) + ") nodes");
 }
+
+//Given two sorted lists of integers, merge them into one large sorted list.
+//
+// For example, given these two lists:
+//
+// lst0 = [5, 10, 15]
+// lst1 = [3, 8, 9]
+// Return [3, 5, 8, 9, 10, 15].
+function mergeArr(lst0, lst1) {
+   let mergedArr = [];
+   let index1 = 0;
+   let index2 = 0;
+   let current = 0;
+
+   while (current < (lst0.length + lst1.length)) {
+       let islst0Depleted = index1 >= lst0.length;
+       let islst1Depleted = index2 >= lst1.length;
+
+       if(!islst0Depleted && (islst1Depleted || (lst0[index1] < lst1[index2]))) {
+           mergedArr[current] = lst0[index1];
+           index1++;
+       } else {
+           mergedArr[current] = lst1[index2];
+           index2++;
+       }
+
+       current++;
+   }
+
+    return mergedArr;
+
+}
+
+
+
+
+console.log(mergeArr([5, 10, 15], [3, 8, 9]));
