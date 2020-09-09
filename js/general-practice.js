@@ -198,3 +198,29 @@ function eliminateDupes(s) {
 }
 
 console.log(eliminateDupes("Mira Fawn"));
+
+
+//lookup example with linked list
+function getIthItemInLinkedList(head, i) {
+
+    if (i < 0) {
+        throw new Error("i can't be negative: " + i);
+    }
+
+    var currentPosition = 0;
+    var currentNode = head;
+
+    while (currentNode) {
+
+        if (currentPosition === i) {
+            // found it!
+            return currentNode;
+        }
+
+        // move on to the next node
+        currentNode = currentNode.next;
+        currentPosition++;
+    }
+
+    throw new Error("List has fewer than i + 1 (" + (i + 1) + ") nodes");
+}
