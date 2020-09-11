@@ -249,8 +249,4 @@ function mergeArr(lst0, lst1) {
     return mergedArr;
 
 }
-
-
-
-
 console.log(mergeArr([5, 10, 15], [3, 8, 9]));
