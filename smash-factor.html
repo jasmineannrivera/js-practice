@@ -10,7 +10,7 @@
     //Create a function that takes ball speed bs and club speed cs as arguments and returns the smash factor to the nearest hundredth. EX: smashFactor(139.4, 93.8) ➞ 1.49
 
 	function smashFactor(bs, cs) {
-	    return (bs / cs).toFixed(2);
+	    return parseFloat((bs / cs).toFixed(2));
 
     }
 
