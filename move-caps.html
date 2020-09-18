@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//Create a function that moves all capital letters to the front of a word.
+	//capToFront("hApPy") ➞ "APhpy"
+
+	function capToFront(str) {
+	    let capStr = "";
+	    let lowStr = "";
+        for(let letter of str) {
+            if (letter.toUpperCase() === letter) {
+                capStr+=letter;
+            } else {
+                lowStr+= letter
+            }
+
+        }
+		return capStr+=lowStr;
+    }
+
+    console.log(capToFront("hApPy"));
+</script>
+
+</body>
+</html>
