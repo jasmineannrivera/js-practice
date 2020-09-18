@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+        // Create a function that finds the word "bomb" in the given string. If found, return "Duck!!!", otherwise return "There is no bomb, relax.". EX: bomb("Hey, did you think there is a bomb?") ➞ "Duck!!!"
+
+	function bomb(str) {
+        let counter = 0;
+        let strArr = removePunctuation(str).toLowerCase().split(" ");
+        for (let i = 0; i < strArr.length; i++) {
+            console.log(strArr[i]);
+            if (strArr[i] === "bomb") {
+                counter++;
+            }
+        }
+        if (counter > 0) {
+            return "Duck!!!"
+        } else {
+            return "There is no bomb, relax."
+        }
+    }
+
+        var regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+
+        function removePunctuation(string) {
+            return string.replace(regex, '');
+        }
+
+        console.log(bomb("Hey, did you think there is a bomb?"))
+	</script>
+</body>
+</html>
