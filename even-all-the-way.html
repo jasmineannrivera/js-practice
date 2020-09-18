@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//Given an array of numbers, return an array which contains all the even numbers in the orginal array, which also have even indices. EX: getOnlyEvens([1, 3, 2, 6, 4, 8]) ➞ [2, 4]
+	
+	function getOnlyEvens(nums) {
+	    let results = [];
+	    let counter = 0;
+	    for (let i = 0; i < nums.length; i++) {
+			if (nums[i] % 2 === 0 && counter % 2 === 0) {
+			    results.push(nums[i]);
+
+
+            }
+            counter++;
+
+        }
+	    return results;
+    }
+
+
+    console.log(getOnlyEvens([1, 3, 2, 6, 4, 8]));
+    console.log(getOnlyEvens([0, 1, 2, 3, 4]));
+</script>
+</body>
+</html>
