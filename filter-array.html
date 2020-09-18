@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+    // Create a function that takes an array of non-negative integers and strings and return a new array without the strings.
+	function filterArray(arr) {
+	    let newArr = [];
+	    for (let i = 0; i < arr.length; i++) {
+	        if (typeof arr[i] === "number" ) {
+	            newArr.push(arr[i]);
+	        }
+
+	    }
+        return newArr;
+    }
+
+    console.log(filterArray([1, 2, "a", "b"]));
+    console.log(filterArray([1, 2, "aasf", "1", "123", 123]));
+</script>
+</body>
+</html>
