@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+    // Create a function that takes two strings as arguments and returns the number of times the first string (the single character) is found in the second string. EX: charCount("a", "edabit") ➞ 1
+	function charCount(myChar, str) {
+	    let counter = 0;
+		for (let i = 0; i < str.length; i++) {
+            if (str[i] === myChar) {
+                counter++;
+            }
+        }
+		return counter;
+    }
+
+    console.log(charCount("a", "edabit"));
+    console.log(charCount("c", "Chamber of secrets"));
+    console.log(charCount("b", "big fat bubble"));
+</script>
+
+</body>
+</html>
