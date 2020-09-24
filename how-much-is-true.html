@@ -12,13 +12,14 @@
 	//EX: countTrue([true, false, false, true, false]) ➞ 2
 
 	function countTrue(arr) {
-	    let counter = 0;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] === true) {
-                counter++;
-            }
-        }
-        return counter;
+	    // let counter = 0;
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] === true) {
+        //         counter++;
+        //     }
+        // }
+        // return counter;
+        return arr.filter(Boolean).length;
 
     }
 
