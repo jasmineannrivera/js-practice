@@ -33,6 +33,7 @@
 	}
 </style>
 <div id="geocoder"></div>
+<script src="js/jquery-2.2.4.js"></script>
 <script>
     // TO MAKE THE MAP APPEAR YOU MUST
     // ADD YOUR ACCESS TOKEN FROM
@@ -50,9 +51,12 @@
         let lon = e.result.center[0];
         let lat = e.result.center[1];
         console.log(e.result)
-        console.log(e.result.center);
         console.log(lon);
         console.log(lat);
+        $.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly&appid=f3846b0c841256675a19a50e484ca5ff&units=imperial").done(function(data) {
+            console.log(data);
+
+        });
 
     })
 
