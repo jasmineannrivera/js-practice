@@ -33,6 +33,7 @@
 	}
 </style>
 <div id="geocoder"></div>
+<div class="weather"></div>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     // TO MAKE THE MAP APPEAR YOU MUST
@@ -55,10 +56,13 @@
         console.log(lat);
         $.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly&appid=f3846b0c841256675a19a50e484ca5ff&units=imperial").done(function(data) {
             console.log(data);
+            let weather = "";
+            weather+= "<h1>" + data.current.temp + "</h1>";
+            $(".weather").html(weather);
 
         });
 
-    })
+    });
 
 
     geocoder.addTo('#geocoder');
