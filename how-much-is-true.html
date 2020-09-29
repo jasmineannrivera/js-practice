@@ -23,8 +23,76 @@
 
     }
 
-    console.log(countTrue([true, false, false, true, false]));
-    console.log(countTrue([false, false, false, false]));
+    // console.log(countTrue([true, false, false, true, false]));
+    // console.log(countTrue([false, false, false, false]));
+
+    function arrayMedian(sequence) {
+        const mid = Math.floor(sequence.length / 2),
+            nums = [...sequence].sort((a, b) => a - b);
+        return sequence.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+    }
+    // var request = new XMLHttpRequest()
+	//
+	//
+    // request.open('GET', 'http://127.0.0.1:8081/products', true)
+	//
+    // request.onload = function () {
+    //     var data = JSON.parse(this.response)
+	//
+	//
+    // }
+	//
+    // var request = new XMLHttpRequest()
+	//
+    // request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+    // request.onload = function () {
+    //     // Begin accessing JSON data here
+    //     var data = JSON.parse(this.response)
+	//
+    //     if (request.status >= 200 && request.status < 400) {
+    //         data.forEach((movie) => {
+    //             // console.log(movie.title)
+    //         })
+    //     } else {
+    //         console.log('error')
+    //     }
+    // }
+	//
+    // request.send()
+	//
+	//
+    // request.send()
+
+
+	//
+    // const userAction = async () => {
+    //     const response = await fetch('http://127.0.0.1:8081/products');
+    //     const myJson = await response.json(); //extract JSON from the http response
+    //     // do something with myJson
+    //     console.log(myJson);
+    // }
+
+    // fetch('http://127.0.0.1:8081/products')
+    //     .then(response => response.json())
+    //     .then(data => console.log(data));
+	//
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('GET', 'http://127.0.0.1:8081/products');
+    // xhr.onload = function() {
+    //     var data = JSON.parse(this.response)
+    //     // console.log(data);
+    // };
+    // xhr.send();
+
+    const fetchAllProducts = async () => {
+        const response = await fetch('http://127.0.0.1:8081/productservice');;
+        const data = await response.json();
+        console.log(data);
+    }
+    fetchAllProducts();
+
+
+
 </script>
 </body>
 </html>
