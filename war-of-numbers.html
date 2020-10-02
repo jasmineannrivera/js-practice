@@ -11,11 +11,16 @@
 		//filter out evens
         const evensSum = arr.filter(num => num % 2 === 0).reduce((a, b) => a + b, 0);
         const oddsSum = arr.filter(num => num % 2 !== 0).reduce((a, b) => a + b, 0);
-        console.log(evensSum);
-        console.log(oddsSum);
+        if (evensSum > oddsSum) {
+            return evensSum - oddsSum;
+        } else {
+            return oddsSum - evensSum;
+        }
+
     }
 
     console.log(warOfNumbers([2, 8, 7, 5]));
+    console.log(warOfNumbers([5, 9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243]));
 </script>
 </body>
 </html>
