@@ -9,10 +9,10 @@
 	//Create a function that takes an array of integers, sums the even and odd numbers separately, then returns the larger of the sums minus the smaller.
     function warOfNumbers(arr) {
 		//filter out evens
-        const evens = arr.filter(num => num % 2 === 0);
-        const odds = arr.filter(num => num % 2 !== 0);
-        console.log(evens);
-        console.log(odds);
+        const evensSum = arr.filter(num => num % 2 === 0).reduce((a, b) => a + b, 0);
+        const oddsSum = arr.filter(num => num % 2 !== 0).reduce((a, b) => a + b, 0);
+        console.log(evensSum);
+        console.log(oddsSum);
     }
 
     console.log(warOfNumbers([2, 8, 7, 5]));
