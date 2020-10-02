@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//Create a function that takes an array of integers, sums the even and odd numbers separately, then returns the larger of the sums minus the smaller.
+    function warOfNumbers(arr) {
+		//filter out evens
+        const evens = arr.filter(num => num % 2 === 0);
+        const odds = arr.filter(num => num % 2 !== 0);
+        console.log(evens);
+        console.log(odds);
+    }
+
+    console.log(warOfNumbers([2, 8, 7, 5]));
+</script>
+</body>
+</html>
