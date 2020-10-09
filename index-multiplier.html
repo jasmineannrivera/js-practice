@@ -14,14 +14,17 @@
 	        return 0;
 	    }
 	    let index = 0;
+	    let total = 0;
 	    for (let i = 0; i < arr.length; i++) {
             index++;
-            console.log(arr[i] * (index - 1));
+            total += arr[i] * (index - 1);
 
         }
+	    return total;
 	}
 
     console.log(indexMultiplier([1, 2, 3, 4, 5]));
+    console.log(indexMultiplier([-3, 0, 8, -6]));
 </script>
 </body>
 </html>
