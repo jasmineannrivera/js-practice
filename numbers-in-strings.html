@@ -25,6 +25,13 @@
     // time complexity: O(n^2)? linear loop and a linear test of each index
 	// space complexity: O(n)? Arrays are linear
 
+    function numInStrBetterSol(arr) {
+        return arr.filter(x=>/\d/.test(x));
+    }
+
+    //time complexity: O(n) .filter built in method is linear
+	//space complexity: O(1)? no variables to keep in memory
+
 </script>
 </body>
 </html>
