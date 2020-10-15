@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//Create a function that takes an array of strings and returns an array with only the strings that have numbers in them. If there are no strings containing numbers, return an empty array.
+
+    function numInStr(arr) {
+        let newArr = [];
+        let hasNumber = /\d/;
+		for (let i = 0; i < arr.length; i++) {
+		    if (hasNumber.test(arr[i]) === true) {
+		        newArr.push(arr[i])
+		    }
+		}
+		return newArr;
+    }
+
+    console.log(numInStr(["1a", "a", "2b", "b"]));
+    console.log(numInStr(["abc", "abc10"]));
+
+</script>
+</body>
+</html>
