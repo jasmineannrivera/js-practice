@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//Collect odd values of an array
+
+	//How I would do it without recursion
+	function collectOddsLoop(arr) {
+	    let newArr = [];
+	    for (let num of arr) {
+	        if (num % 2 !== 0) {
+	            newArr.push(num);
+	        }
+	    }
+	    return newArr;
+
+    }
+    console.log(collectOddsLoop([1, 2, 3, 4, 5]));
+	////////////////////////////////////////////////////////////////////////////////////
+
+	//Helper method recursion way
+	function collectOddValuesHelper(arr) {
+	    //initialize empty array
+	    let result = [];
+	    //declare helper function
+	    function helper(helperInput) {
+	        //if the arr is empty, return..?
+			if (helperInput.length === 0) {
+			    return;
+			}
+			//if the first element of the array is odd, push it to the new result arr
+			if (helperInput[0] % 2 !== 0) {
+			    result.push(helperInput[0])
+			}
+			//recursive call of helper function with the array minus the first element
+			helper(helperInput.slice(1))
+        }
+        //calling the helper
+        helper(arr);
+	    //returning new arr of odds
+		return result;
+
+    }
+    console.log(collectOddValuesHelper([1, 2, 3, 4, 5]));
+	////////////////////////////////////////////////////////////////////////////////
+
+	//Pure recursion way
+	function collectOddValues(arr) {
+	    //initialize empty array
+		let newArr = [];
+
+		//base case
+		if (arr.length === 0) {
+		    return newArr;
+		}
+
+		//check if first element is odd logic
+		if(arr[0] % 2 !== 0) {
+		    newArr.push(arr[0]);
+		}
+
+		//set newArr equal to old-newArr plus the recursive function call of array minus the first element
+		newArr = newArr.concat(collectOddValues(arr.slice(1)));
+		//finally return newArr
+		return newArr;
+
+    }
+
+    console.log(collectOddValues([1, 2, 3, 4, 5]));
+</script>
+</body>
+</html>
