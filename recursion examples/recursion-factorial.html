@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//How I would solve it normally without recursion
+	//time complexity: O(n)?
+	//space complexity: O(n)?
+	function factorialLoop(num) {
+	    let total = 1;
+		for (let i = 1; i <= num; i++) {
+		    total *= i;
+		}
+		return total;
+    }
+    console.log(factorialLoop(4));
+	///////////////////////////////////////////////////
+
+	//Factorial with recursion
+	//time complexity: O(1)
+	//space complexity: O(1)
+
+	function factorial(num) {
+	    //base case
+		if (num === 1) {
+		    return 1;
+		} else {
+		    //recursive call with new input
+		    return num * factorial(num - 1);
+		}
+    }
+
+    console.log(factorial(4));
+</script>
+</body>
+</html>
