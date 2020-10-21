@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+
+	// This is the recursive solution to finding the sum of each number between 1 and num
+	function sumRange(num) {
+	    if (num === 1) {
+	        return 1;
+	    }
+	    return num + sumRange(num - 1);
+
+    }
+
+    console.log(sumRange(3));
+	// 3 + 2 + 1 = 6
+    console.log(sumRange(6));
+
+</script>
+</body>
+</html>
