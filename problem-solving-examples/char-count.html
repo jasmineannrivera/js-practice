@@ -7,7 +7,7 @@
 <body>
 <script>
 	//write a function which takes in a string and returns counts of each character in the string
-	//RESTATE: count the frequency of each letter in a string
+	//RESTATE: count the frequency of each alphanumeric char in a string
 	//INPUTS? string
 	//OUTPUTS: char and it's freq num maybe we can use objects?
 	//HOW TO LABEL? charCounts(str)
@@ -16,6 +16,12 @@
 	//EMPTY AND INVALID INPUTS: charCounts("") -> {}? null? error? charCounts(21) -> undefined?
 	//STEPS:
 		//make obj to return at the end
+		//lowercase string
+		//loop over string to see if each char is a key in our obj
+		//if not, add it and set value to 1
+		//if so, add 1 to value
+		//if char is not alphanumeric do nothing
+		//return obj
 
 	function charCounts(str) {
 
