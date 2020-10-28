@@ -25,15 +25,28 @@
 
 	function charCounts(str) {
 		let object = {};
+
 		let newStr = str.toLowerCase();
+
 		let alphanumeric = /^[a-z0-9]+$/i;
+
         for (let char of newStr) {
+
             if (char.match(alphanumeric)) {
+
                 if (!object.hasOwnProperty(char)) {
                     object[char] = 1;
+
                 } else {
+
                     object[char] += 1;
                 }
+                //alt logic
+	            // if (object[char] > 0) {
+	            //     object[char]++;
+	            // } else {
+	            //     object[char] = 1;
+	            // }
             }
         }
         return object;
