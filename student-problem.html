@@ -21,9 +21,13 @@
 	];
 
 	function students(array) {
+	    //initialize empty obj
 		let obj = {};
+		//look at each subarr of arr
 	    for (let studentClass of array) {
+	        //define var subject as the second element of each subarr
 	        let subject = studentClass[1];
+	        //define var student as the first element of each subarr
 	        let student = studentClass[0];
 	        if (!obj[subject]) {
 	            obj[subject] = [];
