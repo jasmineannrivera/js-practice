@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//Write a function called same, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of values must be the same.
+
+	//nested loop solution
+	function sameNest(arr1, arr2) {
+	    if (arr1.length !== arr2.length) {
+	        return false;
+	    }
+	    let matches = 0;
+	    for (let x of arr1) {
+	        for (let y of arr2) {
+	            if (x ** 2 === y) {
+	                matches++;
+	                break;
+	            }
+	        }
+	    }
+        return matches === arr1.length;
+    }
+
+    // console.log(sameNest([1, 2, 3], [4, 1, 9])); //true
+    // console.log(sameNest([1, 2, 3], [1, 9])); //false
+    // console.log(sameNest([1, 2, 1], [4, 4, 1])); //false
+
+	////////////FREQUENCY PATTERN SOLUTION///////////////
+	function same(arr1, arr2) {
+	    //edge case
+		if (arr1.length !== arr2.length) {
+		    return false;
+		}
+		//initialize counter objs
+		let frequencyCounter1 = {}; //each obj will have key : value
+		let frequencyCounter2 = {}; //which will be value : frequency
+
+		//loop over arr1
+		for (let val of arr1) {
+		    //finds if the val from arr exists in obj, if it is undefined default to zero if it is there add one!
+			frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+		}
+
+        //loop over arr2
+        for (let val of arr2) {
+            //finds if the val from arr exists in obj, if it is undefined default to zero if it is there add one!
+            frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+        }
+
+        //loop over freq1 obj
+		for (let key in frequencyCounter1) {
+		    if (!(key ** 2 in frequencyCounter2)) {
+		        return false
+		    }
+		    if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
+		        return false;
+		    }
+		}
+        console.log(frequencyCounter1);
+        console.log(frequencyCounter2);
+        return true;
+
+    }
+
+    console.log(same([1, 2, 3], [4, 1, 9])); //true
+    console.log(same([1, 2, 3], [1, 9])); //false
+    console.log(same([1, 2, 1], [4, 4, 1])); //false
+</script>
+</body>
+</html>
