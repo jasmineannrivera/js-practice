@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		//Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman
+
+		function anagram(str1, str2) {
+		    //edge case! if the lengths aren't the same, false
+			if (str1.length !== str2.length) {
+			    return false;
+			}
+			//initialize objects
+			//key value pair is letter : freq
+			let obj1 = {};
+			let obj2 = {};
+
+			for (let char of str1) {
+			    obj1[char.toLowerCase()] = (obj1[char.toLowerCase()] || 0) + 1;
+			}
+
+            for (let char of str2) {
+                obj2[char.toLowerCase()] = (obj2[char.toLowerCase()] || 0) + 1;
+            }
+
+            for (let key in obj1) {
+                if (!(key in obj2)) {
+                    return false;
+                }
+                if (obj2[key] !== obj1[key]) {
+                    return false
+                }
+            }
+            console.log(obj1);
+            console.log(obj2);
+            return true;
+        }
+
+        console.log(anagram("cinema", "iceman"));
+        console.log(anagram("cineme", "iceman"));
+	</script>
+</body>
+</html>
