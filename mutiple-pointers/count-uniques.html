@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	//Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted
+
+	function countUniqueValues(arr) {
+	    //edge case
+		if (arr.length === 0) return 0;
+		//make pointers
+		let i = 0;
+		//for loop for second pointer?
+		for(let j = 1; j < arr.length; j++) {
+		    if (arr[i] !== arr[j]) {
+		        i++;
+		        arr[i] = arr[j];
+		    }
+		}
+		return i + 1;
+    }
+
+    console.log(countUniqueValues([1, 1, 1, 1, 1, 2, 3, 3]));
+</script>
+</body>
+</html>

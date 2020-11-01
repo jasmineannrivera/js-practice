@@ -8,19 +8,44 @@
 <script>
 	//Write a function called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that sum to zero or undefined if a pair does not exist
 
+	// function sumZero(arr) {
+	// 	if (arr === undefined) {
+	// 	    return undefined;
+	// 	}
+	// 	for (let i = 0; i < arr.length; i++) {
+	// 	    for (let j = 1; j < i; j++) {
+	// 	        if (arr[i] + arr[j] === 0) {
+	// 	           return [arr[i], arr[j]];
+	// 	        }
+	// 	    }
+	// 	}
+    // }
+	//
+    // console.log(sumZero([-3,-2,-1,0,1,2,3]));
+
+
+	///////////////////MULTIPLE POINTERS VERSION///////////////////////
 	function sumZero(arr) {
-		if (arr === undefined) {
-		    return undefined;
-		}
-		for (let i = 0; i < arr.length; i++) {
-		    for (let j = 1; j < i; j++) {
-		        if (arr[i] + arr[j] === 0) {
-		           return [arr[i], arr[j]];
-		        }
-		    }
+		//make pointers
+		let left = 0;
+		let right = arr.length - 1;
+		//while loop with conditions
+		while (left < right) {
+		    //var for sum and testing
+			let sum = arr[left] + arr[right];
+
+			if (sum === 0) {
+			    return [arr[left], arr[right]]
+			//if the sum is positive, the right num is too big move down one index
+			} else if (sum > 0) {
+			    right--;
+            //if the sum is negative, the left num is too small move up one index
+			} else {
+			    left--;
+			}
+
 		}
     }
-
     console.log(sumZero([-3,-2,-1,0,1,2,3]));
 </script>
 </body>
