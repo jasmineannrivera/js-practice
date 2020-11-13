@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+    function binaryPatternMatching(pattern, s) {
+        let newStr = "";
+		let vowels = /[aeiouy]/;
+		for (let char of s) {
+		    if (vowels.test(char)) {
+		        newStr += 0;
+		    } else {
+		        newStr += 1;
+		    }
+		}
+		let result = 0;
+        for (let i = 0; i < newStr.length; i++) {
+            if (!newStr.includes("1") && !pattern.includes("1")) {
+                result = Math.floor(newStr.length / pattern.length);
+            }
+	        if (isMatch(newStr.substr(i, pattern.length), pattern)) {
+	            result++;
+	        }
+
+        }
+        return result;
+
+    }
+
+    function isMatch(str, pattern) {
+        return str === pattern
+    }
+
+
+
+    console.log(binaryPatternMatching("00", "aaaaaaaaaa"));
+</script>
+</body>
+</html>
