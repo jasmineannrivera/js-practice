@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//Given an array of integers, write a function that determines whether the array contains any duplicates. Your function should return true if any element appears at least twice in the array, and it should return false if every element is distinct.
+    function containsDuplicates(a) {
+		let set = {};
+		for (let nums of a) {
+		    set[a[nums]] = (set[a[nums]] || 0) + 1;
+		}
+        console.log(set);
+		for (let freq in set) {
+		    if (set[freq] > 1) {
+		        return true;
+		    }
+		}
+		return false;
+    }
+
+    console.log(containsDuplicates([1, 2, 3, 1]));
+</script>
+</body>
+</html>
