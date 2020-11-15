@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	//Create a function that takes an array of numbers and returns the second largest number
+
+	//one liner with built in method
+	function secondLargest(arr) {
+	    return arr.sort((function(a, b) {return a - b;}))[arr.length - 2];
+
+    }
+
+    console.log(secondLargest([10, 40, 30, 20, 50]));
+</script>
+</body>
+</html>
