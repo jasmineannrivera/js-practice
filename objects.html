@@ -8,31 +8,54 @@
 <script>
 
     //obj literal syntax
-    const circle = {
-        radius: 1,
-        location: {
-            x: 1,
-            y: 1
-        },
-        draw: function () {
+    // const circle = {
+    //     //properties
+    //     radius: 1,
+    //     location: {
+    //         x: 1,
+    //         y: 1
+    //     },
+	//     //method
+    //     draw: function () {
+    //         console.log('draw');
+    //     }
+    // };
+
+    // circle.draw();
+
+
+
+    //factory function
+    function createCircle(radius) {
+		return {
+		    //es6 for radius: radius
+		    radius,
+			draw: function () {
+                console.log('draw');
+            }
+		};
+    }
+
+    //create a circle
+    const circle = createCircle(1);
+
+
+    //constructor function
+	function Circle(radius) {
+		this.radius = radius;
+		this.draw = function () {
             console.log('draw');
         }
-    };
+    }
+    //new creates a new obj and 'this' points to object and obj will return from Circle
+    const another = new Circle(1);
 
-	// let employee = {
-	//     baseSalary: 30_000,
-	//
-	//     overtime:  10,
-	//
-	// 	rate: 20,
-	//
-	// 	getWage: function () {
-	// 		return this.baseSalary + (this.overtime * this.rate);
-    //     }
-	// };
-    // console.log(employee.getWage());
-	//
-    // console.log(employee);
+
+
+
+
+
+
 
 
 </script>
