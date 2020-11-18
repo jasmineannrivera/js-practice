@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	//constructor
+	function Book(title, author, year) {
+	    this.title = title;
+	    this.author = author;
+	    this.year = year;
+
+	    this.getSummary = function () {
+			return `${this.title} was written by ${this.author} in ${this.year}`;
+        }
+    }
+
+    //instantiate an object
+	const book1 = new Book('Book One', 'John Doe', '2013');
+    console.log(book1.getSummary());
+</script>
+</body>
+</html>
