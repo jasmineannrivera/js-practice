@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+
+    class Person {
+	    constructor(name) {
+	        this.name = name;
+        }
+        toString(){
+	        return `${this.name} says hello!`;
+        }
+    }
+
+    class Student extends Person {
+        constructor(name, id) {
+            super(name);
+            this.id = id;
+        }
+        toString() {
+            return `${this.name}, Student ID: ${this.id}`;
+        }
+    }
+
+    let student1 = new Student('Jasmine', '22');
+    console.log(student1.toString());
+    // console.log(student1.sayHello());
+
+    let een = new Person("Een", "25");
+    // console.log(een.sayHello());
+
+
+
+</script>
+</body>
+</html>

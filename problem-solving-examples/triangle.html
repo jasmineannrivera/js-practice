@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+        function pyramid(rows) {
+			//create a string for each row
+            for(let i = 1; i <= rows; i++){
+                let str = '';
+
+                //Add the white space to the left of each string
+                for(let k = 1; k <= (rows - i); k++){
+                    str += '#';
+                }
+
+                //Add the '*' for each string
+                for(let j = 0; j !== (2 * i - 1); j++){
+                    str += '*';
+                }
+
+                //Add the white space to the right
+                for(let k =  i + 1; k <= rows; k++){
+                    str += '#';
+                }
+
+                //Print the pyramid pattern for each row
+                console.log(str);
+            }
+        }
+
+        console.log(pyramid(5));
+
+
+	</script>
+</body>
+</html>
