@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	//Write a function to return the average of all numbers except the minimum number in a passed down array.
+
+	function arrAvg(arr) {
+	    let min = 100;
+	    let total = 0;
+
+	    for (let num of arr) {
+	        if (num < min) {
+	            min = num;
+	        }
+	        total += num;
+	    }
+	    return (total - min) / (arr.length - 1);
+
+    }
+
+    console.log(arrAvg([1, 2, 3, 4, 5]));
+</script>
+</body>
+</html>
