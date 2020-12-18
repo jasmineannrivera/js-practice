@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	//Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+
+    function adjacentElementsProduct(inputArray) {
+        let left = 0;
+        let right = left + 1;
+        let product = Number.NEGATIVE_INFINITY;
+
+        while (right < inputArray.length) {
+            if (product < (inputArray[left] * inputArray[right])) {
+                product = (inputArray[left] * inputArray[right]);
+            }
+            // console.log(inputArray[left] * inputArray[right])
+            // console.log(product);
+            left++;
+            right++;
+        }
+        return product;
+    }
+
+    console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3]));
+</script>
+</body>
+</html>

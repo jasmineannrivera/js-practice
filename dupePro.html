@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+    function numDuplicates(name, price, weight) {
+        // Write your code here
+        const duplicateMap ={};
+
+        const numOfItems = name.length;
+
+        let duplicateItems = 0;
+
+        for (let i = 0; i < numOfItems; i++) {
+            const key = `${name[i]}_${price[i]}_${weight[i]}`;
+
+            if (duplicateMap[key]) duplicateItems++;
+
+            else duplicateMap[key] = 1;
+        }
+
+        return duplicateItems
+    }
+
+    numDuplicates()
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
