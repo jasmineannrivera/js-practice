@@ -5,19 +5,65 @@
 	<title>Title</title>
 </head>
 <body>
-	<button id="api-call">Click Me</button>
+
+<label for="enter-title">Enter Movie Title: </label><input type="text" id="enter-title">
+<button id="search-title">Search Title</button>
+
+<div id="show-titles">
+
+</div>
 
 <script>
-	function apiCall() {
-        fetch('https://api.github.com/users/jasmineannrivera')
-            .then(response => response.json())  // convert to json
-            .then(function (data) { //now the response is the var data
-                console.log(data);
-            })    //print data to console
-            .catch(err => console.log('Request Failed', err)); // Catch errors
+	//click event for movie call
+    document.getElementById("search-title").addEventListener("click", movieCall);
+
+    //function to create elements
+    function createNode(element) {
+        return document.createElement(element);
     }
 
-    document.getElementById("api-call").addEventListener("click", apiCall);
+    //function to append elements into their parents
+    function append(parent, el) {
+        return parent.appendChild(el);
+    }
+    //area of page for all the titles and pics
+    const page = document.getElementById("show-titles");
+
+    function movieCall() {
+        page.innerHTML = "";
+	    let title = document.getElementById("enter-title").value;
+        fetch("https://imdb-internet-movie-database-unofficial.p.rapidapi.com/search/" + title, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "f7fae7a135mshc2885b5130ff91fp116dfbjsn58306e11884b",
+                "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com"
+            }
+        })
+            .then(response => response.json())
+            .then(function (data) {
+                let titles = data.titles;
+                console.log(titles);
+                return titles.map(function (title) {
+                    let div = createNode('div');
+                    let p = createNode('p');
+                    let img = createNode('img');
+                    img.src = title.image;
+                    img.width = 500;
+                    img.height = 500;
+                    let span = createNode('span');
+                    span.innerHTML = `${title.title}`;
+
+                    append(p, span);
+                    append(p, img);
+	                append(div, p);
+	                append(page, div)
+
+                })
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }
 </script>
 
 </body>
