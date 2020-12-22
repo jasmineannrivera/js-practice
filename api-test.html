@@ -11,7 +11,9 @@
 	function apiCall() {
         fetch('https://api.github.com/users/jasmineannrivera')
             .then(response => response.json())  // convert to json
-            .then(json => console.log(json))    //print data to console
+            .then(function (data) { //now the response is the var data
+                console.log(data);
+            })    //print data to console
             .catch(err => console.log('Request Failed', err)); // Catch errors
     }
 
