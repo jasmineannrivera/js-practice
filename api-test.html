@@ -44,6 +44,8 @@
                 let titles = data.titles;
                 console.log(titles);
                 return titles.map(function (title) {
+                    let id = title.id;
+                    console.log(id);
                     let div = createNode('div');
                     let p = createNode('p');
                     let img = createNode('img');

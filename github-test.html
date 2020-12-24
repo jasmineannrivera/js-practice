@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const url = 'https://api.github.com/users/'
+	function getLanguages(userName) {
+	    fetch(url + userName + '/repos')
+		.then(res => res.json())
+		.then(data => {
+            console.log(data);
+            let lang = {};
+            for (let obj of data ) {
+                lang[obj.language] = (lang[obj.language] || 0) + 1;
+            }
+            console.log(lang);
+        })
+
+    }
+
+    getLanguages("jasmineannrivera");
+</script>
+</body>
+</html>
