@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	function findMostCommonChar(word) {
+
+	    let wordObj = {};
+
+	    for(let i = 0; i < word.length; i++) {
+
+            wordObj[word.charAt(i)] = (wordObj[word.charAt(i)] || 0) + 1;
+
+	    }
+
+		let mostCommonChar;
+
+	    let most = 0;
+
+	    for (let key in wordObj) {
+
+	        if (wordObj[key] > most) {
+
+	            most = wordObj[key];
+
+	            mostCommonChar = key;
+
+            }
+	    }
+	    return mostCommonChar;
+    }
+
+    console.log(findMostCommonChar("sttrriinnggs"));
+	//
+    // function samsMostCommonChar(word){
+    //     var wordArray = word.split("");
+    //     var chars = [];
+    //     var tally = [];
+    //     for(var i = 0; i < wordArray.length; i++){
+    //         if(chars.indexOf(wordArray[i]) === -1){
+    //             chars = [...chars, wordArray[i]];
+    //             tally = [...tally, 1];
+    //         }else{
+    //             tally[chars.indexOf(wordArray[i])] = tally[chars.indexOf(wordArray[i])] + 1;
+    //         }
+    //     }
+    //     var highestTally = Math.max(...tally)
+    //     var highestCharIndex = tally.indexOf(highestTally)
+    //     console.log("return");
+    //     return chars[highestCharIndex];
+	//
+    // }
+
+    // console.log(samsMostCommonChar("strings"));
+</script>
+</body>
+</html>
