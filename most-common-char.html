@@ -17,24 +17,29 @@
 
 	    }
 
-		let mostCommonChar;
-
 	    let most = 0;
 
 	    for (let key in wordObj) {
+
 
 	        if (wordObj[key] > most) {
 
 	            most = wordObj[key];
 
-	            mostCommonChar = key;
 
             }
 	    }
-	    return mostCommonChar;
+	    let result = [];
+	    for (let letter in wordObj) {
+	        if(wordObj[letter] === most) {
+	            result.push(letter);
+	        }
+	    }
+	    return result;
+
     }
 
-    console.log(findMostCommonChar("sttrriinnggs"));
+    console.log(findMostCommonChar("hhello"));
 	//
     // function samsMostCommonChar(word){
     //     var wordArray = word.split("");
