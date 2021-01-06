@@ -7,6 +7,7 @@
 <body>
 
 <script>
+
 	function findMostCommonChar(word) {
 
 	    let wordObj = {};
@@ -14,32 +15,31 @@
 	    for(let i = 0; i < word.length; i++) {
 
             wordObj[word.charAt(i)] = (wordObj[word.charAt(i)] || 0) + 1;
-
 	    }
 
-	    let most = 0;
+	    let greatestFreq = 1;
 
 	    for (let key in wordObj) {
 
-
-	        if (wordObj[key] > most) {
-
-	            most = wordObj[key];
-
+	        if (wordObj[key] > greatestFreq) {
+	            greatestFreq = wordObj[key];
 
             }
 	    }
+
 	    let result = [];
+
 	    for (let letter in wordObj) {
-	        if(wordObj[letter] === most) {
+
+	        if(wordObj[letter] === greatestFreq) {
 	            result.push(letter);
 	        }
 	    }
-	    return result;
 
+	    return result;
     }
 
-    console.log(findMostCommonChar("hhello"));
+    console.log(findMostCommonChar("hhelllooo"));
 	//
     // function samsMostCommonChar(word){
     //     var wordArray = word.split("");
