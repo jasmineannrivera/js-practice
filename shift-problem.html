@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	//Given a non empty string of lowercase letters and a non neg int representing a key, write a function to return a new string with every letter in the input string shifted by x positions in the alphabet =>
+    //sample “xyz”, 2 => output => “zab”
+	//"abc" 52 => "abc"
+
+	//take a string and an int and shift each letter by the int
+	//inputs: string, int representing the shift amount
+	//output: new string that is shifted
+
+	//"abc", 2 => "cde"
+	//abc", 52 => "abc"
+
+	// a, 1 => b
+
+	//wrap with for loop
+	//find the index of the char
+	//add the shift var to the index
+	//replace the char with the new char at the index
+	//return the new char
+
+	// add char of the alphabet at the index + the num
+
+	//25 -> 3 28 - alphabet.length = 2 -> index of 2 -> c
+
+	//if the index + num is greater than the length - 1 -> do logic to make it wrap
+	// make overflow var and set to index + num - length
+	// add char at overflow index to newStr
+
+	const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+	function shiftStuff(str, num) {
+		let newStr = "";
+
+
+    }
+
+    console.log(shiftStuff("jazz", 27)); //
+
+
+    // for (let char of str) {
+    //     let index = alphabet.indexOf(char);
+    //     while ((index + num) > alphabet.length - 1) {
+    //         let overflow = (index + num) - alphabet.length;
+    //         newStr += alphabet.charAt(overflow);
+    //     }
+    //     newStr += alphabet.charAt(index + num);
+    //     console.log(newStr);
+	//
+	//
+    // }
+    // return newStr;
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
