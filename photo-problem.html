@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+
+	const image1 = [
+	    [1, 1, 1, 1, 1, 1, 1],
+	    [1, 1, 1, 1, 1, 1, 1],
+	    [1, 1, 1, 0, 0, 0, 1],
+	    [1, 1, 1, 0, 0, 0, 1],
+	    [1, 1, 1, 1, 1, 1, 1],
+
+	];
+	//sample output variations (only one is necessary)
+	//findRectangle(image1) =>
+	//row: 2, column: 3, width: 3, height: 2
+	//2,3 3,5 -- row, column of the top left and bottom right corners
+
+	function findRectangle(image) {
+	    let result = [];
+	    for (let i = 0; i < image.length; i++) {
+	        let arr = image[i];
+	        for (let j = 0; j < arr.length; j++) {
+	            if (arr[j] === 0) {
+	               result.push([i,j]);
+	            }
+	        }
+
+        }
+        let topLeft = result[0];
+	    let bottomRight = result[result.length - 1];
+	    return [topLeft, bottomRight];
+
+    }
+
+    console.log(findRectangle(image1));
+</script>
+</body>
+</html>
