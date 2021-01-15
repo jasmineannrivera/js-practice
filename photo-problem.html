@@ -8,14 +8,14 @@
 
 <script>
 
-	const image1 = [
-	    [1, 1, 1, 1, 1, 1, 1],
-	    [1, 1, 1, 1, 1, 1, 1],
-	    [1, 1, 1, 0, 0, 0, 1],
-	    [1, 1, 1, 0, 0, 0, 1],
-	    [1, 1, 1, 1, 1, 1, 1],
-
-	];
+	// const image1 = [
+	//     [1, 1, 1, 1, 1, 1, 1],
+	//     [1, 1, 1, 1, 1, 1, 1],
+	//     [1, 1, 1, 0, 0, 0, 1],
+	//     [1, 1, 1, 0, 0, 0, 1],
+	//     [1, 1, 1, 1, 1, 1, 1],
+	//
+	// ];
 	//sample output variations (only one is necessary)
 	//findRectangle(image1) =>
 	//row: 2, column: 3, width: 3, height: 2
@@ -55,6 +55,76 @@
     }
 
     mapFindRectangle(image1);
+
+
+    //hello
+    //imagine we have an image.  We'll represent this image as a simple 2d array where every pixel is a 1 or a 0.  the image you get is known to have a single rectangle of 0s on a background of 1s.
+
+    //write a function that takes in the image and returns one of the following representations of the rectangle of 0s: top-left coord and bottom-right coord  OR top-left coord, width, height
+
+
+    const image1 = [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 0, 0, 0, 1],
+        [1, 1, 1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+    ]
+
+    const image2 = [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0]
+    ]
+
+    //sample output
+    //findRectangle => 2,3 3,5  OR
+
+    // [[2, 3], [3, 5]]
+
+    //findRectangle => row: 2, column: 3, width : 3, height : 2
+
+    // { }
+
+    // complete rectangle in the image
+
+    // loop through image array to find the inital 0 and increment some kind of counter while running through the array that had the first 0
+
+
+    // loop through the array to find first 0, loop through inner array until we find a row with no 0
+
+
+    function findRectanglee(arr){
+        let bucket = [];
+
+        for(let i = 0; i < arr.length; i++){
+            for(let j = 0; j < arr[i].length; j++){
+                if(arr[i][j] === 0){
+                    bucket.push([i, j]);
+                    // bucket contains [[2, 3]];
+                }
+            }
+        }
+
+        const firstPoint = bucket[0];
+        const finalPoint = bucket[bucket.length - 1];
+
+        console.log([firstPoint, finalPoint]);
+
+        return [firstPoint, finalPoint];
+
+    }
+
+
+    //time complexity in terms of input (n * m)
+    // O ((n*m)^2)
+
+
+    //space complexity in terms of input (n * m)
+    // O (n * m)
+
 
 
 
