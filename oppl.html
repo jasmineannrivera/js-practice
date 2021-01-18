@@ -6,37 +6,114 @@
 </head>
 <body>
 <script>
-    function binaryPatternMatching(pattern, s) {
-        let newStr = "";
-		let vowels = /[aeiouy]/;
+	/*You are given two strings, pattern and s. The first string, pattern, contains only the symbols 0 and 1.  The second string, s, contains only lowercase English letters.
+
+Let's say that pattern matches a substring s[l..r] of s if the following 3 conditions are met:
+
+They have equal lengths;
+For each 0 in pattern, the corresponding letter in the substring is a vowel;
+For each 1 in pattern, the corresponding letter is a consonant.
+
+Your task is to calculate the number of substrings of s that match pattern and return that number.
+
+Note: In this we define the vowels as a,e,i,o,u, and y. All other letters are consonants.
+
+Sample Input:
+pattern = "010", s = "catcatcat"
+
+Sample Output:
+
+binaryPatternMatching(pattern, s) =>  3
+
+
+Sample Input:
+pattern = "1101", s = "puppy"
+
+Sample Output:
+
+binaryPatternMatching(pattern, s) =>  0
+
+Sample Input:
+pattern = "00", s = "aaaaaaaaaa"
+
+Sample Output:
+
+binaryPatternMatching(pattern, s) =>  5
+
+
+
+*/
+
+
+	function binaryPatternMatching(pattern, s) {
+
+	    //create newStr
+		let newStr = " ";
+		//create str of vowels
+		let vowels = "aieouy";
+        //convert s to binary pattern and save as newStr
 		for (let char of s) {
-		    if (vowels.test(char)) {
-		        newStr += 0;
-		    } else {
-		        newStr += 1;
-		    }
+
 		}
-		let result = 0;
-        for (let i = 0; i < newStr.length; i++) {
-            if (!newStr.includes("1") && !pattern.includes("1")) {
-                result = Math.floor(newStr.length / pattern.length);
-            }
-	        if (isMatch(newStr.substr(i, pattern.length), pattern)) {
-	            result++;
-	        }
 
-        }
-        return result;
-
-    }
-
-    function isMatch(str, pattern) {
-        return str === pattern
-    }
+	}
 
 
 
-    console.log(binaryPatternMatching("00", "aaaaaaaaaa"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//
+    // function binaryPatternMatching(pattern, s) {
+    //     let newStr = "";
+	// 	let vowels = /[aeiouy]/;
+	// 	for (let char of s) {
+	// 	    if (vowels.test(char)) {
+	// 	        newStr += 0;
+	// 	    } else {
+	// 	        newStr += 1;
+	// 	    }
+	// 	}
+	// 	let result = 0;
+    //     for (let i = 0; i < newStr.length; i++) {
+    //         if (!newStr.includes("1") && !pattern.includes("1")) {
+    //             result = Math.floor(newStr.length / pattern.length);
+    //         }
+	//         if (isMatch(newStr.substr(i, pattern.length), pattern)) {
+	//             result++;
+	//         }
+	//
+    //     }
+    //     return result;
+	//
+    // }
+	//
+    // function isMatch(str, pattern) {
+    //     return str === pattern
+    // }
+	//
+	//
+	//
+    // console.log(binaryPatternMatching("1101", "puppy"));
 </script>
 </body>
 </html>
