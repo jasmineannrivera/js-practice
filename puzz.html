@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+    function spellingBeeSolutions(wordlist, keypad) {
+        let wordDict = {};
+        let output = [];
+
+
+        for (let i = 0; i < wordlist.length; i++) {
+            let words = new Set(wordlist[i]);
+            wordDict[wordlist[i]] = words;
+        }
+
+        for (let p = 0; p < keypad.length; p++) {
+            let puzzLetter = keypad[p].split('')
+            console.log('puzzle', puzzLetter);
+            let count = 0;
+
+            for (let z = 0; z < wordlist.length; z++) {
+                let microCounter = 0;
+                let overcount = 0;
+                for (let q = 0; q < puzzLetter.length; q++) {
+
+
+                    if (!wordDict[wordlist[z]].has(puzzLetter[0])) {
+                        break;
+                    }
+
+                    overcount++;
+                    if (wordDict[wordlist[z]].has(puzzLetter[q])) {
+                        microCounter++;
+                    }
+
+                    if (microCounter >= wordDict[wordlist[z]].size && q === puzzLetter.length - 1) {
+                        count++;
+                    }
+                }
+
+            }
+
+            output.push(count)
+        }
+
+
+        return output;
+    }
+    spellingBeeSolutions(
+        ['APPLE', 'PLEAS', 'PLEASE'],
+        ['AELWXYZ', 'AELPXYZ', 'AELPSXY', 'SAELPXY', 'XAELPSY']) // [0,1,3,2,0]
+
+</script>
+
+</body>
+</html>
